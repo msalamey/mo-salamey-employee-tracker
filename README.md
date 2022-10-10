@@ -18,7 +18,7 @@ To create a Node.js command-line application with MySQL that allows non-develope
 
 ## Screen Shot
 
-![image](https://user-images.githubusercontent.com/107436206/194795135-068850c2-fb8f-456d-8088-89120fb8bf83.png)
+![image](https://user-images.githubusercontent.com/107436206/194795373-f2ebd71a-3fd3-4c4e-a7e9-dbb5ec86b5f3.png)
  
 ## Links
 
