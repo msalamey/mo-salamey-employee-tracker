@@ -1,6 +1,6 @@
-const mysql2 = require ('mysql2'); 
+const mysql2 = require('mysql2'); 
 const inquirer = require('inquirer');
-const printTable = require('console.table');
+require('console.table'); 
 let roles;
 let departments;
 let managers;
@@ -291,7 +291,7 @@ viewDepartments = () => {
       console.log(err || result);
     });
 
-    printTable(res);
+    console.table(res);
     start();
   });
 };
@@ -303,8 +303,8 @@ viewRoles = () => {
       console.log(err || result);
     });
 
-    printTable(res);
-    start();
+    console.table(res);
+    //start();
   });
 };
 
@@ -315,7 +315,7 @@ viewEmployees = () => {
       console.log(err || result);
     });
   
-    printTable(res);
+    console.table(res);
     start();
   });
 };
