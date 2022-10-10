@@ -16,9 +16,12 @@ To create a Node.js command-line application with MySQL that allows non-develope
 * Utilized  
 * Added bonus criteria quires into the employee.sql file. 
 
-
 ## Screen Shot
 
-![image](https://user-images.githubusercontent.com/107436206/192126019-c714cb9b-207c-4e94-a8c9-ad95aecf32a3.png)
+![image](https://user-images.githubusercontent.com/107436206/194794781-3a328520-c7b9-4592-b3cb-b7dbaa750a37.png
  
 ## Links
+
+Video Link: 
+
+GitHub Link: https://github.com/msalamey/mo-salamey-employee-tracker
