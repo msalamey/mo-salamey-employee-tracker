@@ -1,13 +1,12 @@
-const mysql = require ('mysql2'); 
+const mysql2 = require ('mysql2'); 
 const inquirer = require('inquirer');
-const { printTable } = require('console-table-printer');
-const text = require('text');
+const printTable = require('console.table');
 let roles;
 let departments;
 let managers;
 let employees;
 
-var connection = mysql.createConnection({
+var connection = mysql2.createConnection({
     host: "localhost",
     port: 3306,
     // Your username
@@ -17,7 +16,7 @@ var connection = mysql.createConnection({
     database: "employees_db"
   });
 
-  text('Employee Tracker', (err, result) => {
+  ('Employee Tracker', (err, result) => {
     console.log(err || result);
   });
 
@@ -53,7 +52,7 @@ var connection = mysql.createConnection({
           deleteSomething();
         }
         else if (answer.choices === "EXIT") {
-          text('Thanks for using Employee Tracker', (err, result) => {
+          ('Thanks for using Employee Tracker', (err, result) => {
             console.log(err || result);
           });
         
@@ -119,7 +118,7 @@ addSomething = () => {
       addEmployee();
     } 
     else if (answer.add === "EXIT") {
-      text('Thanks for using Employee Tracker', (err, result) => {
+      ('Thanks for using Employee Tracker', (err, result) => {
         console.log(err || result);
       });
 
@@ -274,7 +273,7 @@ viewSomething = () => {
       viewEmployees();
     }
     else if (answer.viewChoice === "EXIT") {
-      text('Thanks for using Employee Tracker', (err, result) => {
+      ('Thanks for using Employee Tracker', (err, result) => {
         console.log(err || result);
       });
 
@@ -288,7 +287,7 @@ viewSomething = () => {
 viewDepartments = () => {
   connection.query("SELECT * FROM department", (err, res) => {
     if (err) throw err;
-    text('Departments', (err, result) => {
+    ('Departments', (err, result) => {
       console.log(err || result);
     });
 
@@ -300,7 +299,7 @@ viewDepartments = () => {
 viewRoles = () => {
   connection.query("SELECT  r.id, r.title, r.salary, d.name as Department_Name FROM role AS r INNER JOIN department AS d ON r.department_id = d.id", (err, res) => {
     if (err) throw err;
-    text('Roles', (err, result) => {
+    ('Roles', (err, result) => {
       console.log(err || result);
     });
 
@@ -312,7 +311,7 @@ viewRoles = () => {
 viewEmployees = () => {
   connection.query('SELECT e.id, e.first_name, e.last_name, d.name AS department, r.title, r.salary, CONCAT_WS(" ", m.first_name, m.last_name) AS manager FROM employee e LEFT JOIN employee m ON m.id = e.manager_id INNER JOIN role r ON e.role_id = r.id INNER JOIN department d ON r.department_id = d.id ORDER BY e.id ASC', (err, res) => {
     if (err) throw err;
-    text('Employees', (err, result) => {
+    ('Employees', (err, result) => {
       console.log(err || result);
     });
   
@@ -337,7 +336,7 @@ updateSomething = () => {
       updateEmployeeManager();
     }
     else if(answer.update === "EXIT") {
-      text('Thanks for using Employee Tracker', (err, result) => {
+      ('Thanks for using Employee Tracker', (err, result) => {
         console.log(err || result);
       });
 
@@ -487,7 +486,7 @@ deleteSomething = () => {
     else if (answer.delete === "Delete employee") {
       deleteEmployee();
     } else if(answer.delete === "EXIT") {
-      text('Thanks for using Employee Tracker', (err, result) => {
+      ('Thanks for using Employee Tracker', (err, result) => {
         console.log(err || result);
       });
 
