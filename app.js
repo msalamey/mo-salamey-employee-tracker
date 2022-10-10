@@ -1,4 +1,4 @@
-const mysql = require ('mysql'); 
+const mysql = require ('mysql2'); 
 const inquirer = require('inquirer');
 const { printTable } = require('console-table-printer');
 const text = require('text');
